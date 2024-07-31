@@ -1,0 +1,15 @@
+me\indian\discord\core\config\DiscordConfig.class
+me\indian\discord\core\config\sub\BotConfig.class
+me\indian\discord\core\IDiscordJDA.class
+me\indian\discord\core\manager\IStatsChannelsManager.class
+me\indian\discord\core\config\LinkingConfig.class
+me\indian\discord\core\embed\component\Field.class
+me\indian\discord\core\config\sub\RestAPIConfig.class
+me\indian\discord\core\config\ProximityVoiceChatConfig.class
+me\indian\discord\core\config\StatsChannelsConfig.class
+me\indian\discord\core\embed\component\Footer.class
+me\indian\discord\core\command\SlashCommand.class
+me\indian\discord\core\manager\ILinkingManager.class
+me\indian\discord\core\config\sub\WebHookConfig.class
+me\indian\discord\core\listener\JDAListener.class
+me\indian\discord\core\config\MessagesConfig.class
