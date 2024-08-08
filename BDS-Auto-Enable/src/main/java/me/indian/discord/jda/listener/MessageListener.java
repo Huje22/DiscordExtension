@@ -66,8 +66,6 @@ public class MessageListener extends ListenerAdapter implements JDAListener {
         this.textChannel = this.discordJDA.getTextChannel();
     }
 
-    //TODO: Dodać info o przypięciu wiadomości
-    
     @Override
     public void onMessageDelete(final MessageDeleteEvent event) {
         if (event.getChannel() instanceof final TextChannel channel) {
@@ -98,14 +96,27 @@ public class MessageListener extends ListenerAdapter implements JDAListener {
                 final Message oldMessage = this.getMessage(event.getMessageIdLong());
 
                 if (oldMessage != null) {
-                    //TODO: Dodac jakos info o obrazach
-                    this.discordJDA.log("Edytowano wiadomość",
-                            "```" + oldMessage.getContentRaw() + "```" +
-                                    " ↓↓↓↓↓↓" +
-                                    "```" + message.getContentRaw() + "```" +
-                                    "\t-------\n" +
-                                    "\t[Skocz](" + message.getJumpUrl() + ")",
-                            new Footer(member.getEffectiveName(), member.getEffectiveAvatarUrl()));
+                    if (message.isPinned() && !oldMessage.isPinned()) {
+                        final String msg = "&aWiadomość użytkownika &b" + this.discordJDA.getUserName(member, member.getUser()) +
+                                "&a zostałą przypięta&7 \"&b" + message.getContentRaw() + "&7\"";
+
+                        if (this.serverProcess.isEnabled()) ServerUtil.tellrawToAll(msg);
+                        this.logger.info(msg);
+                        this.discordJDA.writeConsole(ConsoleColors.removeColors(msg));
+
+                        return;
+                    }
+
+                    if (!oldMessage.getContentRaw().equals(message.getContentRaw())) {
+                        //TODO: Dodac jakos info o obrazach
+                        this.discordJDA.log("Edytowano wiadomość",
+                                "```" + oldMessage.getContentRaw() + "```" +
+                                        " ↓↓↓↓↓↓" +
+                                        "```" + message.getContentRaw() + "```" +
+                                        "\t-------\n" +
+                                        "\t[Skocz](" + message.getJumpUrl() + ")",
+                                new Footer(member.getEffectiveName(), member.getEffectiveAvatarUrl()));
+                    }
                 }
 
                 this.sendMessage(member, event.getAuthor(), message, true);
