@@ -224,17 +224,26 @@ public class DiscordJDA implements IDiscordJDA {
         if (user.isBot()) return;
         user.openPrivateChannel().queue(privateChannel -> privateChannel.sendMessage(message).queue(
                 success -> this.logger.debug("Wysłano wiadomość do:&b " + user.getName() + " &d(&e" + user.getIdLong() + "&d)"),
-                failure -> this.logger.debug("Nie udało się wysłać wiadomości do:&b " + user.getName() + " &d(&e" + user.getIdLong() + "&d)", failure)
-        ));//TODO: Gdy nie uda się wysłać wiadomość wyślij ja na główny kanał czatu i usuń po 5s
+                failure -> {
+                    this.log("Nie udane wysyłanie prywatnej wiadomości",
+                            "Nie udało się wysłać wiadomości do:&b " + user.getName() + " &d(&e" + user.getIdLong() + "&d)",
+                            new Footer("", user.getAvatarUrl()));
+                    this.textChannel.sendMessage(message).queue(message1 -> message1.delete().queueAfter(5, TimeUnit.SECONDS));
+                }
+        ));
     }
-
 
     @Override
     public void sendPrivateMessage(final User user, final MessageEmbed embed) {
         if (user.isBot()) return;
         user.openPrivateChannel().queue(privateChannel -> privateChannel.sendMessageEmbeds(embed).queue(
                 success -> this.logger.debug("Wysłano wiadomość do:&b " + user.getName() + " &d(&e" + user.getIdLong() + "&d)"),
-                failure -> this.logger.debug("Nie udało się wysłać wiadomości do:&b " + user.getName() + " &d(&e" + user.getIdLong() + "&d)", failure)
+                failure -> {
+                    this.log("Nie udane wysyłanie prywatnej wiadomości",
+                            "Nie udało się wysłać wiadomości do:&b " + user.getName() + " &d(&e" + user.getIdLong() + "&d)",
+                            new Footer("", user.getAvatarUrl()));
+                    this.textChannel.sendMessageEmbeds(embed).queue(message1 -> message1.delete().queueAfter(5, TimeUnit.SECONDS));
+                }
         ));
     }
 
