@@ -66,6 +66,8 @@ public class MessageListener extends ListenerAdapter implements JDAListener {
         this.textChannel = this.discordJDA.getTextChannel();
     }
 
+    //TODO: Dodać info o przypięciu wiadomości
+    
     @Override
     public void onMessageDelete(final MessageDeleteEvent event) {
         if (event.getChannel() instanceof final TextChannel channel) {
