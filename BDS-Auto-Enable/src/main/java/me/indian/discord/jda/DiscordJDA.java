@@ -225,7 +225,7 @@ public class DiscordJDA implements IDiscordJDA {
         user.openPrivateChannel().queue(privateChannel -> privateChannel.sendMessage(message).queue(
                 success -> this.logger.debug("Wysłano wiadomość do:&b " + user.getName() + " &d(&e" + user.getIdLong() + "&d)"),
                 failure -> this.logger.debug("Nie udało się wysłać wiadomości do:&b " + user.getName() + " &d(&e" + user.getIdLong() + "&d)", failure)
-        ));
+        ));//TODO: Gdy nie uda się wysłać wiadomość wyślij ja na główny kanał czatu i usuń po 5s
     }
 
 
