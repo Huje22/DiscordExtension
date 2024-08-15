@@ -14,8 +14,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 import me.indian.bds.logger.Logger;
+import me.indian.bds.util.DateUtil;
 import me.indian.bds.util.GsonUtil;
-import me.indian.bds.util.MathUtil;
 import me.indian.bds.util.MessageUtil;
 import me.indian.bds.util.ThreadUtil;
 import me.indian.discord.DiscordExtension;
@@ -75,7 +75,7 @@ public class WebHook {
                 WebHook.this.requests = 0;
             }
         };
-        new Timer("Webhook request cleaner", true).scheduleAtFixedRate(task, 0, MathUtil.minutesTo(3, TimeUnit.MILLISECONDS));
+        new Timer("Webhook request cleaner", true).scheduleAtFixedRate(task, 0, DateUtil.minutesTo(3, TimeUnit.MILLISECONDS));
     }
 
     public void sendMessage(final String message) {

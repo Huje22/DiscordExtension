@@ -5,7 +5,7 @@ import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 import me.indian.bds.BDSAutoEnable;
 import me.indian.bds.logger.Logger;
-import me.indian.bds.util.MathUtil;
+import me.indian.bds.util.DateUtil;
 import me.indian.discord.DiscordExtension;
 import me.indian.discord.core.config.StatsChannelsConfig;
 import me.indian.discord.core.manager.IStatsChannelsManager;
@@ -84,8 +84,8 @@ public class StatsChannelsManager implements IStatsChannelsManager {
             };
 
             this.timer.scheduleAtFixedRate(onlinePlayersTask,
-                    MathUtil.minutesTo(1, TimeUnit.MILLISECONDS),
-                    MathUtil.secondToMillis(30)
+                    DateUtil.minutesTo(1, TimeUnit.MILLISECONDS),
+                    DateUtil.secondToMillis(30)
             );
         }
     }

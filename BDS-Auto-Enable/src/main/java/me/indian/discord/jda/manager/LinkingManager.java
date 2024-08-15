@@ -16,8 +16,8 @@ import java.util.concurrent.TimeUnit;
 import me.indian.bds.BDSAutoEnable;
 import me.indian.bds.logger.Logger;
 import me.indian.bds.server.stats.StatsManager;
+import me.indian.bds.util.DateUtil;
 import me.indian.bds.util.GsonUtil;
-import me.indian.bds.util.MathUtil;
 import me.indian.discord.DiscordExtension;
 import me.indian.discord.core.config.LinkingConfig;
 import me.indian.discord.core.manager.ILinkingManager;
@@ -193,8 +193,8 @@ public class LinkingManager implements ILinkingManager {
     }
 
     private void startTasks() {
-        final long saveTime = MathUtil.minutesTo(30, TimeUnit.MILLISECONDS);
-        final long forLinkedTime = MathUtil.minutesTo(1, TimeUnit.MILLISECONDS);
+        final long saveTime = DateUtil.minutesTo(30, TimeUnit.MILLISECONDS);
+        final long forLinkedTime = DateUtil.minutesTo(1, TimeUnit.MILLISECONDS);
         final Timer timer = new Timer("LinkedAccountsTimer", true);
 
         final TimerTask saveAccountsTimer = new TimerTask() {
@@ -232,7 +232,7 @@ public class LinkingManager implements ILinkingManager {
                 }
             }
 
-            final long hours = MathUtil.hoursFrom(this.bdsAutoEnable.getServerManager().getStatsManager().getPlayTime(name), TimeUnit.MILLISECONDS);
+            final long hours = DateUtil.hoursFrom(this.bdsAutoEnable.getServerManager().getStatsManager().getPlayTime(name), TimeUnit.MILLISECONDS);
             final Role playtimeRole = guild.getRoleById(this.linkingConfig.getLinkedPlaytimeRoleID());
             final Role linkingRole = guild.getRoleById(this.linkingConfig.getLinkedRoleID());
 

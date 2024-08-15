@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 import me.indian.bds.BDSAutoEnable;
 import me.indian.bds.server.stats.StatsManager;
 import me.indian.bds.util.DateUtil;
-import me.indian.bds.util.MathUtil;
+import me.indian.bds.util.DateUtil;
 import me.indian.bds.util.MessageUtil;
 import me.indian.bds.util.ServerUtil;
 import me.indian.bds.watchdog.module.pack.PackModule;
@@ -109,7 +109,7 @@ public class LinkingCommand implements SlashCommand {
     private String hasEnoughHours(final Member member) {
         String hoursMessage = "";
         final long roleID = this.discordExtension.getLinkingConfig().getLinkedPlaytimeRoleID();
-        final long hours = MathUtil.hoursFrom(this.bdsAutoEnable.getServerManager().getStatsManager()
+        final long hours = DateUtil.hoursFrom(this.bdsAutoEnable.getServerManager().getStatsManager()
                 .getPlayTime(this.linkingManager.getNameByID(member.getIdLong())), TimeUnit.MILLISECONDS);
         if (hours < 5) {
             if (this.discordJDA.getJda().getRoleById(roleID) != null) {
@@ -128,7 +128,7 @@ public class LinkingCommand implements SlashCommand {
 
         for (final Map.Entry<Long, Long> entry : linkedAccounts.entrySet()) {
             final String playerName = this.statsManager.getNameByXuid(entry.getKey());
-            final long hours = MathUtil.hoursFrom(this.bdsAutoEnable.getServerManager().getStatsManager()
+            final long hours = DateUtil.hoursFrom(this.bdsAutoEnable.getServerManager().getStatsManager()
                     .getPlayTime(playerName), TimeUnit.MILLISECONDS);
 
             linked.add(place + ". **" + playerName + "**: " + entry.getValue() + " " + (hours < 5 ? "❌" : "✅"));

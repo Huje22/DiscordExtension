@@ -386,7 +386,7 @@ public class DiscordJDA implements IDiscordJDA {
             }
         };
 
-        timer.scheduleAtFixedRate(statusTask, MathUtil.minutesTo(1, TimeUnit.MILLISECONDS), MathUtil.minutesTo(10, TimeUnit.MILLISECONDS));
+        timer.scheduleAtFixedRate(statusTask, DateUtil.minutesTo(1, TimeUnit.MILLISECONDS), DateUtil.minutesTo(10, TimeUnit.MILLISECONDS));
     }
 
     private Activity getCustomActivity() {

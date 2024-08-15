@@ -15,7 +15,7 @@ import me.indian.bds.event.player.PlayerMovementEvent;
 import me.indian.bds.event.player.PlayerQuitEvent;
 import me.indian.bds.logger.Logger;
 import me.indian.bds.player.position.Position;
-import me.indian.bds.util.MathUtil;
+import me.indian.bds.util.DateUtil;
 import me.indian.bds.util.ThreadUtil;
 import me.indian.discord.DiscordExtension;
 import me.indian.discord.core.config.ProximityVoiceChatConfig;
@@ -144,7 +144,7 @@ public class ProximityVoiceChat implements Listener {
             }
         };
 
-        new Timer(this.threadUtil.getThreadName()).scheduleAtFixedRate(timerTask, 0, MathUtil.secondToMillis(this.proximityVoiceChatConfig.getRefreshTime()));
+        new Timer(this.threadUtil.getThreadName()).scheduleAtFixedRate(timerTask, 0, DateUtil.secondToMillis(this.proximityVoiceChatConfig.getRefreshTime()));
     }
 
     public void connectPlayersInProximity(final int proximityThreshold) {
