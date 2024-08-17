@@ -7,7 +7,7 @@ import me.indian.bds.BDSAutoEnable;
 import me.indian.bds.server.ServerProcess;
 import me.indian.bds.server.allowlist.AllowlistManager;
 import me.indian.bds.server.allowlist.component.AllowlistPlayer;
-import me.indian.bds.util.MessageUtil;
+import me.indian.util.MessageUtil;
 import me.indian.discord.DiscordExtension;
 import me.indian.discord.core.command.SlashCommand;
 import net.dv8tion.jda.api.EmbedBuilder;

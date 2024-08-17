@@ -1,7 +1,7 @@
 package me.indian.discord.command;
 
 import me.indian.bds.command.Command;
-import me.indian.bds.util.MessageUtil;
+import me.indian.util.MessageUtil;
 import me.indian.discord.DiscordExtension;
 import me.indian.discord.jda.DiscordJDA;
 import net.dv8tion.jda.api.OnlineStatus;

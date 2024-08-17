@@ -4,12 +4,12 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 import me.indian.bds.BDSAutoEnable;
-import me.indian.bds.logger.Logger;
-import me.indian.bds.util.DateUtil;
 import me.indian.discord.DiscordExtension;
 import me.indian.discord.core.config.StatsChannelsConfig;
 import me.indian.discord.core.manager.IStatsChannelsManager;
 import me.indian.discord.jda.DiscordJDA;
+import me.indian.util.DateUtil;
+import me.indian.util.logger.Logger;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.channel.concrete.VoiceChannel;
 

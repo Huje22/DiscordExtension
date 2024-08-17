@@ -5,7 +5,7 @@ import io.javalin.Javalin;
 import io.javalin.http.ContentType;
 import io.javalin.http.HttpStatus;
 import java.net.HttpURLConnection;
-import me.indian.bds.logger.Logger;
+import me.indian.util.logger.Logger;
 import me.indian.bds.util.GsonUtil;
 import me.indian.discord.DiscordExtension;
 import me.indian.discord.core.config.sub.RestAPIConfig;

@@ -7,12 +7,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import me.indian.bds.BDSAutoEnable;
-import me.indian.bds.logger.ConsoleColors;
-import me.indian.bds.logger.Logger;
 import me.indian.bds.server.ServerManager;
 import me.indian.bds.server.ServerProcess;
-import me.indian.bds.util.DateUtil;
-import me.indian.bds.util.MessageUtil;
+import me.indian.bds.util.MinecraftUtil;
 import me.indian.bds.util.ServerUtil;
 import me.indian.discord.DiscordExtension;
 import me.indian.discord.core.config.DiscordConfig;
@@ -22,6 +19,9 @@ import me.indian.discord.core.embed.component.Footer;
 import me.indian.discord.core.listener.JDAListener;
 import me.indian.discord.core.manager.ILinkingManager;
 import me.indian.discord.jda.DiscordJDA;
+import me.indian.util.DateUtil;
+import me.indian.util.logger.ConsoleColors;
+import me.indian.util.logger.Logger;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Member;
@@ -219,7 +219,7 @@ public class MessageListener extends ListenerAdapter implements JDAListener {
                 msg += this.messagesConfig.getWebhook();
             }
 
-            msg = MessageUtil.fixMessage(msg);
+            msg = MinecraftUtil.fixMessage(msg);
 
             if (this.serverProcess.isEnabled()) ServerUtil.tellrawToAll(msg);
             this.logger.info(msg);
@@ -246,7 +246,7 @@ public class MessageListener extends ListenerAdapter implements JDAListener {
 
     private String generateRawMessage(final Message message) {
         final List<Member> members = message.getMentions().getMembers();
-        String rawMessage = MessageUtil.fixMessage(message.getContentRaw());
+        String rawMessage = MinecraftUtil.fixMessage(message.getContentRaw());
 
         if (!message.getAttachments().isEmpty())
             rawMessage += this.messagesConfig.getAttachment();

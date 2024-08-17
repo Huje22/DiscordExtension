@@ -2,9 +2,9 @@ package me.indian.discord.jda.listener;
 
 import java.util.concurrent.TimeUnit;
 import me.indian.bds.BDSAutoEnable;
-import me.indian.bds.logger.Logger;
+import me.indian.util.logger.Logger;
 import me.indian.bds.server.ServerProcess;
-import me.indian.bds.util.DateUtil;
+import me.indian.util.DateUtil;
 import me.indian.discord.DiscordExtension;
 import me.indian.discord.core.listener.JDAListener;
 import me.indian.discord.jda.DiscordJDA;

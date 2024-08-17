@@ -12,8 +12,8 @@ import me.indian.bds.event.player.PlayerJoinEvent;
 import me.indian.bds.event.player.PlayerQuitEvent;
 import me.indian.bds.event.player.response.PlayerChatResponse;
 import me.indian.bds.server.ServerProcess;
-import me.indian.bds.util.DateUtil;
-import me.indian.bds.util.MessageUtil;
+import me.indian.bds.util.MinecraftUtil;
+import me.indian.util.DateUtil;
 import me.indian.bds.util.ServerUtil;
 import me.indian.discord.DiscordExtension;
 import me.indian.discord.core.config.LinkingConfig;
@@ -147,7 +147,7 @@ public class PlayerEventListener implements Listener {
     }
 
     private void sendPrefixChange(final String playerName, final String prefix) {
-        this.serverProcess.sendToConsole("scriptevent bds:tag_prefix " + playerName.replaceAll("\"", "") + "=" + MessageUtil.colorize(prefix) + " ");
+        this.serverProcess.sendToConsole("scriptevent bds:tag_prefix " + playerName.replaceAll("\"", "") + "=" + MinecraftUtil.colorize(prefix) + " ");
     }
 
     private String getRole(final Member member, final boolean customRole) {

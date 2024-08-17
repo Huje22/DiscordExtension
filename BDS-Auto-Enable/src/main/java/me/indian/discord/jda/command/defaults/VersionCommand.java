@@ -2,7 +2,7 @@ package me.indian.discord.jda.command.defaults;
 
 import java.awt.Color;
 import me.indian.bds.BDSAutoEnable;
-import me.indian.bds.util.ThreadUtil;
+import me.indian.util.ThreadUtil;
 import me.indian.bds.version.VersionManager;
 import me.indian.discord.DiscordExtension;
 import me.indian.discord.core.command.SlashCommand;

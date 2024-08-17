@@ -1,9 +1,8 @@
 package me.indian.discord.jda.command.defaults;
 
 import java.awt.Color;
-import me.indian.bds.server.properties.component.Gamemode;
-import me.indian.bds.util.BedrockQuery;
 import me.indian.discord.core.command.SlashCommand;
+import me.indian.util.BedrockQuery;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
@@ -34,7 +33,6 @@ public class ServerCommand implements SlashCommand {
                 .setColor(Color.BLUE);
 
         if (query.online()) {
-            final Gamemode gamemode = query.gamemode();
             final int portV4 = query.portV4();
             final int portV6 = query.portV6();
 
@@ -45,7 +43,7 @@ public class ServerCommand implements SlashCommand {
             embedBuilder.addField("Nazwa Mapy", query.mapName(), false);
             embedBuilder.addField("Gracz online", String.valueOf(query.playerCount()), true);
             embedBuilder.addField("Maksymalna ilość graczy", String.valueOf(query.maxPlayers()), true);
-            embedBuilder.addField("Tryb Gry", gamemode.getName().toUpperCase() + " (" + gamemode.getId() + ")", false);
+            embedBuilder.addField("Tryb Gry", query.gamemode(), false);
             embedBuilder.addField("Edycja", query.edition(), true);
 
             if (portV4 != -1) {

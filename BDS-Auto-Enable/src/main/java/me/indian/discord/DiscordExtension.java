@@ -6,7 +6,7 @@ import me.indian.bds.BDSAutoEnable;
 import me.indian.bds.command.CommandManager;
 import me.indian.bds.event.EventManager;
 import me.indian.bds.extension.Extension;
-import me.indian.bds.logger.Logger;
+import me.indian.util.logger.Logger;
 import me.indian.discord.command.DiscordCommand;
 import me.indian.discord.command.LinkCommand;
 import me.indian.discord.command.UnlinkCommand;

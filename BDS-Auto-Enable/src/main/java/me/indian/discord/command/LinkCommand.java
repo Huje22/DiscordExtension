@@ -1,9 +1,9 @@
 package me.indian.discord.command;
 
 import me.indian.bds.command.Command;
-import me.indian.bds.util.MessageUtil;
 import me.indian.discord.DiscordExtension;
 import me.indian.discord.core.manager.ILinkingManager;
+import me.indian.util.MessageUtil;
 
 public class LinkCommand extends Command {
 

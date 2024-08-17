@@ -13,15 +13,15 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
-import me.indian.bds.logger.Logger;
-import me.indian.bds.util.DateUtil;
 import me.indian.bds.util.GsonUtil;
-import me.indian.bds.util.MessageUtil;
-import me.indian.bds.util.ThreadUtil;
 import me.indian.discord.DiscordExtension;
 import me.indian.discord.core.config.DiscordConfig;
 import me.indian.discord.core.embed.component.Field;
 import me.indian.discord.core.embed.component.Footer;
+import me.indian.util.DateUtil;
+import me.indian.util.MessageUtil;
+import me.indian.util.ThreadUtil;
+import me.indian.util.logger.Logger;
 
 public class WebHook {
 
