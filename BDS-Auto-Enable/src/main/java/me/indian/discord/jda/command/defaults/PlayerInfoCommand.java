@@ -95,14 +95,14 @@ public class PlayerInfoCommand implements SlashCommand {
                     final long lastQuit = player.getLastQuit();
 
                     if (firstJoin != 0 && firstJoin != -1) {
-                        embedBuilder.addField("Pierwsze dołączenie", this.getTime(DateUtil.longToLocalDateTime(firstJoin)), true);
+                        embedBuilder.addField("Pierwsze dołączenie", this.getTime(DateUtil.millisToLocalDateTime(firstJoin)), true);
                     }
                     if (lastJoin != 0 && lastJoin != -1) {
-                        embedBuilder.addField("Ostatnie dołączenie", this.getTime(DateUtil.longToLocalDateTime(lastJoin)), true);
+                        embedBuilder.addField("Ostatnie dołączenie", this.getTime(DateUtil.millisToLocalDateTime(lastJoin)), true);
                     }
 
                     if (lastQuit != 0 && lastQuit != -1) {
-                        embedBuilder.addField("Ostatnie opuszczenie", this.getTime(DateUtil.longToLocalDateTime(lastQuit)), true);
+                        embedBuilder.addField("Ostatnie opuszczenie", this.getTime(DateUtil.millisToLocalDateTime(lastQuit)), true);
                     }
 
                     embedBuilder.addField("Login Streak", String.valueOf(player.getLoginStreak()), true);
