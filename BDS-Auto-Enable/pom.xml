@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>me.indian</groupId>
+        <groupId>pl.indianbartonka</groupId>
         <artifactId>DiscordExtension</artifactId>
         <version>1.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <groupId>me.indian.discord</groupId>
+    <groupId>pl.indianbartonka.discord</groupId>
     <artifactId>BDS-Auto-Enable</artifactId>
 
     <properties>
@@ -21,14 +21,14 @@
 
     <dependencies>
         <dependency>
-            <groupId>me.indian.bds</groupId>
+            <groupId>pl.indianbartonka.bds</groupId>
             <artifactId>BDS-Auto-Enable</artifactId>
             <version>1.0</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/../libs/BDS-Auto-Enable-0.0.1.jar</systemPath>
         </dependency>
         <dependency>
-            <groupId>me.indian.rest</groupId>
+            <groupId>pl.indianbartonka.rest</groupId>
             <artifactId>RestWebsite</artifactId>
             <version>1.0</version>
             <scope>system</scope>
@@ -37,7 +37,7 @@
 
 
         <dependency>
-            <groupId>me.indian.core</groupId>
+            <groupId>pl.indianbartonka.core</groupId>
             <artifactId>Core</artifactId>
             <version>1.0</version>
             <scope>compile</scope>

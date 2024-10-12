@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>me.indian</groupId>
+        <groupId>pl.indianbartonka</groupId>
         <artifactId>DiscordExtension</artifactId>
         <version>1.0</version>
     </parent>
@@ -38,7 +38,7 @@
         </dependency>
 
         <dependency>
-            <groupId>me.indian.core</groupId>
+            <groupId>pl.indianbartonka.core</groupId>
             <artifactId>Core</artifactId>
             <version>1.0</version>
             <scope>compile</scope>
