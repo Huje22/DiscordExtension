@@ -4,18 +4,6 @@ import java.awt.Color;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import pl.indianbartonka.bds.BDSAutoEnable;
-import pl.indianbartonka.bds.player.Controller;
-import pl.indianbartonka.bds.player.DeviceOS;
-import pl.indianbartonka.bds.player.PlayerStatistics;
-import pl.indianbartonka.bds.server.stats.StatsManager;
-import pl.indianbartonka.util.DateUtil;
-import pl.indianbartonka.util.MessageUtil;
-import pl.indianbartonka.bds.util.geyser.GeyserUtil;
-import pl.indianbartonka.discord.DiscordExtension;
-import pl.indianbartonka.discord.core.command.SlashCommand;
-import pl.indianbartonka.discord.core.manager.ILinkingManager;
-import pl.indianbartonka.discord.jda.DiscordJDA;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
@@ -23,6 +11,18 @@ import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
+import pl.indianbartonka.bds.BDSAutoEnable;
+import pl.indianbartonka.bds.player.InputMode;
+import pl.indianbartonka.bds.player.PlatformType;
+import pl.indianbartonka.bds.player.PlayerStatistics;
+import pl.indianbartonka.bds.server.stats.StatsManager;
+import pl.indianbartonka.bds.util.geyser.GeyserUtil;
+import pl.indianbartonka.discord.DiscordExtension;
+import pl.indianbartonka.discord.core.command.SlashCommand;
+import pl.indianbartonka.discord.core.manager.ILinkingManager;
+import pl.indianbartonka.discord.jda.DiscordJDA;
+import pl.indianbartonka.util.DateUtil;
+import pl.indianbartonka.util.MessageUtil;
 
 public class PlayerInfoCommand implements SlashCommand {
 
@@ -42,7 +42,6 @@ public class PlayerInfoCommand implements SlashCommand {
     public void onExecute(final SlashCommandInteractionEvent event) {
         final Member member = event.getMember();
         if (member == null) return;
-
 
         final OptionMapping mention = event.getOption("player");
         if (mention != null) {
@@ -66,22 +65,17 @@ public class PlayerInfoCommand implements SlashCommand {
                     }
 
                     final long xuid = player.getXuid();
-                    final EmbedBuilder embedBuilder = new EmbedBuilder()
-                            .setTitle("Informacje o graczu " + this.linkingManager.getNameByID(id)).setColor(Color.BLUE);
-
+                    final EmbedBuilder embedBuilder = new EmbedBuilder().setTitle("Informacje o graczu " + this.linkingManager.getNameByID(id)).setColor(Color.BLUE);
 
                     embedBuilder.setThumbnail(GeyserUtil.getBedrockSkinHead(xuid));
                     embedBuilder.addField("Nick", playerName, true);
                     embedBuilder.addField("XUID", String.valueOf(xuid), true);
 
-                    final DeviceOS deviceOS = player.getLastDevice();
-                    final Controller controller = player.getLastController();
+                    final PlatformType deviceOS = player.getPlatformType();
+                    final InputMode inputMode = player.getLastKnownInputMode() ;
 
-                    if (deviceOS != DeviceOS.UNKNOWN || controller != Controller.UNKNOWN) {
-                        embedBuilder.addBlankField(false);
-                        embedBuilder.addField("Platforma", deviceOS.toString(), true);
-                        embedBuilder.addField("Kontroler", controller.toString(), true);
-                    }
+                    embedBuilder.addField("Urządzenie", deviceOS.toString(), true);
+                    embedBuilder.addField("Kontroler", inputMode.toString(), true);
 
                     final List<String> oldNames = player.getOldNames();
                     if (oldNames != null && !oldNames.isEmpty()) {

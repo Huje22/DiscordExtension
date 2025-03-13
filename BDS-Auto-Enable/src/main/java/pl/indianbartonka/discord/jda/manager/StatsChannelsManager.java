@@ -3,6 +3,8 @@ package pl.indianbartonka.discord.jda.manager;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
+import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.channel.concrete.VoiceChannel;
 import pl.indianbartonka.bds.BDSAutoEnable;
 import pl.indianbartonka.discord.DiscordExtension;
 import pl.indianbartonka.discord.core.config.StatsChannelsConfig;
@@ -10,8 +12,6 @@ import pl.indianbartonka.discord.core.manager.IStatsChannelsManager;
 import pl.indianbartonka.discord.jda.DiscordJDA;
 import pl.indianbartonka.util.DateUtil;
 import pl.indianbartonka.util.logger.Logger;
-import net.dv8tion.jda.api.entities.Guild;
-import net.dv8tion.jda.api.entities.channel.concrete.VoiceChannel;
 
 public class StatsChannelsManager implements IStatsChannelsManager {
 

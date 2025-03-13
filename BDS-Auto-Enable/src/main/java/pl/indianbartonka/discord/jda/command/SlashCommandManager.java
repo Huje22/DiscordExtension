@@ -6,6 +6,10 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
+import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
+import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import pl.indianbartonka.bds.extension.Extension;
 import pl.indianbartonka.discord.DiscordExtension;
 import pl.indianbartonka.discord.core.command.SlashCommand;
@@ -24,10 +28,6 @@ import pl.indianbartonka.discord.jda.command.defaults.UnLinkCommand;
 import pl.indianbartonka.discord.jda.command.defaults.VersionCommand;
 import pl.indianbartonka.util.MessageUtil;
 import pl.indianbartonka.util.logger.Logger;
-import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
-import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
-import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 
 public class SlashCommandManager extends ListenerAdapter {
 

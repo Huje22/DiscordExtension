@@ -6,6 +6,19 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+import net.dv8tion.jda.api.OnlineStatus;
+import net.dv8tion.jda.api.Permission;
+import net.dv8tion.jda.api.entities.Member;
+import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.entities.Role;
+import net.dv8tion.jda.api.entities.User;
+import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
+import net.dv8tion.jda.api.entities.channel.middleman.GuildChannel;
+import net.dv8tion.jda.api.events.message.MessageDeleteEvent;
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.events.message.MessageUpdateEvent;
+import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.utils.cache.CacheFlag;
 import pl.indianbartonka.bds.BDSAutoEnable;
 import pl.indianbartonka.bds.server.ServerManager;
 import pl.indianbartonka.bds.server.ServerProcess;
@@ -20,21 +33,8 @@ import pl.indianbartonka.discord.core.listener.JDAListener;
 import pl.indianbartonka.discord.core.manager.ILinkingManager;
 import pl.indianbartonka.discord.jda.DiscordJDA;
 import pl.indianbartonka.util.DateUtil;
-import pl.indianbartonka.util.logger.ConsoleColors;
+import pl.indianbartonka.util.color.AnsiColor;
 import pl.indianbartonka.util.logger.Logger;
-import net.dv8tion.jda.api.OnlineStatus;
-import net.dv8tion.jda.api.Permission;
-import net.dv8tion.jda.api.entities.Member;
-import net.dv8tion.jda.api.entities.Message;
-import net.dv8tion.jda.api.entities.Role;
-import net.dv8tion.jda.api.entities.User;
-import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
-import net.dv8tion.jda.api.entities.channel.middleman.GuildChannel;
-import net.dv8tion.jda.api.events.message.MessageDeleteEvent;
-import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-import net.dv8tion.jda.api.events.message.MessageUpdateEvent;
-import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import net.dv8tion.jda.api.utils.cache.CacheFlag;
 
 public class MessageListener extends ListenerAdapter implements JDAListener {
 
@@ -102,7 +102,7 @@ public class MessageListener extends ListenerAdapter implements JDAListener {
 
                         if (this.serverProcess.isEnabled()) ServerUtil.tellrawToAll(msg);
                         this.logger.info(msg);
-                        this.discordJDA.writeConsole(ConsoleColors.removeColors(msg));
+                        this.discordJDA.writeConsole(AnsiColor.removeColors(msg));
 
                         return;
                     }
@@ -223,7 +223,7 @@ public class MessageListener extends ListenerAdapter implements JDAListener {
 
             if (this.serverProcess.isEnabled()) ServerUtil.tellrawToAll(msg);
             this.logger.info(msg);
-            this.discordJDA.writeConsole(ConsoleColors.removeColors(msg));
+            this.discordJDA.writeConsole(AnsiColor.removeColors(msg));
             this.addMessage(message.getIdLong(), message);
         } catch (final Exception exception) {
             this.logger.error("Nie udało się wysłać wiadomości z Discord do Minecraft", exception);

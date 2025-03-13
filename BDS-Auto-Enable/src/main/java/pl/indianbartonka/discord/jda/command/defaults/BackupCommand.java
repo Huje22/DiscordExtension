@@ -5,19 +5,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.LinkedList;
 import java.util.List;
-import pl.indianbartonka.bds.BDSAutoEnable;
-import pl.indianbartonka.util.logger.LogState;
-import pl.indianbartonka.bds.server.ServerProcess;
-import pl.indianbartonka.util.DateUtil;
-import pl.indianbartonka.util.MathUtil;
-import pl.indianbartonka.util.MessageUtil;
-import pl.indianbartonka.bds.util.ServerUtil;
-import pl.indianbartonka.bds.util.StatusUtil;
-import pl.indianbartonka.util.ThreadUtil;
-import pl.indianbartonka.bds.watchdog.module.BackupModule;
-import pl.indianbartonka.discord.DiscordExtension;
-import pl.indianbartonka.discord.core.command.SlashCommand;
-import pl.indianbartonka.discord.jda.DiscordJDA;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Member;
@@ -30,6 +17,20 @@ import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import net.dv8tion.jda.api.interactions.components.ActionRow;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
+import pl.indianbartonka.bds.BDSAutoEnable;
+import pl.indianbartonka.bds.server.ServerProcess;
+import pl.indianbartonka.bds.util.ServerUtil;
+import pl.indianbartonka.bds.watchdog.module.BackupModule;
+import pl.indianbartonka.discord.DiscordExtension;
+import pl.indianbartonka.discord.core.command.SlashCommand;
+import pl.indianbartonka.discord.jda.DiscordJDA;
+import pl.indianbartonka.util.DateUtil;
+import pl.indianbartonka.util.FileUtil;
+import pl.indianbartonka.util.MemoryUnit;
+import pl.indianbartonka.util.MessageUtil;
+import pl.indianbartonka.util.ThreadUtil;
+import pl.indianbartonka.util.logger.LogState;
+import pl.indianbartonka.util.system.SystemUtil;
 
 public class BackupCommand extends ListenerAdapter implements SlashCommand {
 
@@ -142,7 +143,7 @@ public class BackupCommand extends ListenerAdapter implements SlashCommand {
 
     private MessageEmbed getBackupEmbed() {
         final String backupStatus = "`" + this.backupModule.getStatus() + "`\n";
-        final long gbSpace = MathUtil.bytesToGB(StatusUtil.availableDiskSpace());
+        final long gbSpace = MemoryUnit.BYTES.to(SystemUtil.getFreeCurrentDiskSpace(), MemoryUnit.GIBIBYTES);
 
         final List<String> description = new LinkedList<>();
         this.backupButtons.clear();
@@ -157,7 +158,7 @@ public class BackupCommand extends ListenerAdapter implements SlashCommand {
                         .withEmoji(Emoji.fromUnicode("🗑️")));
             }
 
-            description.add("Nazwa: `" + fileName + "` Rozmiar: `" + this.backupModule.getBackupSize(path.toFile()) + "`");
+            description.add("Nazwa: `" + fileName + "` Rozmiar: `" + FileUtil.getFileSize(path.toFile()) + "`");
         }
 
         return new EmbedBuilder()

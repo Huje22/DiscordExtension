@@ -13,20 +13,20 @@ import java.util.Objects;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
-import pl.indianbartonka.bds.BDSAutoEnable;
-import pl.indianbartonka.util.logger.Logger;
-import pl.indianbartonka.bds.server.stats.StatsManager;
-import pl.indianbartonka.util.DateUtil;
-import pl.indianbartonka.bds.util.GsonUtil;
-import pl.indianbartonka.discord.DiscordExtension;
-import pl.indianbartonka.discord.core.config.LinkingConfig;
-import pl.indianbartonka.discord.core.manager.ILinkingManager;
-import pl.indianbartonka.discord.jda.DiscordJDA;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Role;
 import org.jetbrains.annotations.Nullable;
+import pl.indianbartonka.bds.BDSAutoEnable;
+import pl.indianbartonka.bds.server.stats.StatsManager;
+import pl.indianbartonka.bds.util.GsonUtil;
+import pl.indianbartonka.discord.DiscordExtension;
+import pl.indianbartonka.discord.core.config.LinkingConfig;
+import pl.indianbartonka.discord.core.manager.ILinkingManager;
+import pl.indianbartonka.discord.jda.DiscordJDA;
+import pl.indianbartonka.util.DateUtil;
+import pl.indianbartonka.util.logger.Logger;
 
 public class LinkingManager implements ILinkingManager {
 

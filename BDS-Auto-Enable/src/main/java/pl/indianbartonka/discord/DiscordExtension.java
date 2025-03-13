@@ -2,9 +2,7 @@ package pl.indianbartonka.discord;
 
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
-import pl.indianbartonka.rest.RestWebsite;
 import net.dv8tion.jda.api.JDA;
-import org.jetbrains.annotations.Nullable;
 import pl.indianbartonka.bds.BDSAutoEnable;
 import pl.indianbartonka.bds.command.CommandManager;
 import pl.indianbartonka.bds.event.EventManager;
@@ -26,6 +24,7 @@ import pl.indianbartonka.discord.listener.ExtensionDisableListener;
 import pl.indianbartonka.discord.listener.PlayerEventListener;
 import pl.indianbartonka.discord.listener.ServerListener;
 import pl.indianbartonka.discord.webhook.WebHook;
+import pl.indianbartonka.rest.RestWebsite;
 import pl.indianbartonka.util.logger.Logger;
 
 public class DiscordExtension extends Extension {

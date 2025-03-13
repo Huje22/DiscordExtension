@@ -5,15 +5,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import pl.indianbartonka.bds.BDSAutoEnable;
-import pl.indianbartonka.bds.server.stats.ServerStats;
-import pl.indianbartonka.bds.server.stats.StatsManager;
-import pl.indianbartonka.util.DateUtil;
-import pl.indianbartonka.util.MessageUtil;
-import pl.indianbartonka.bds.util.PlayerStatsUtil;
-import pl.indianbartonka.bds.watchdog.module.pack.PackModule;
-import pl.indianbartonka.discord.DiscordExtension;
-import pl.indianbartonka.discord.core.command.SlashCommand;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.entities.emoji.Emoji;
@@ -24,6 +15,15 @@ import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import net.dv8tion.jda.api.interactions.components.ActionRow;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
+import pl.indianbartonka.bds.BDSAutoEnable;
+import pl.indianbartonka.bds.server.stats.ServerStats;
+import pl.indianbartonka.bds.server.stats.StatsManager;
+import pl.indianbartonka.bds.util.PlayerStatsUtil;
+import pl.indianbartonka.bds.watchdog.module.pack.PackModule;
+import pl.indianbartonka.discord.DiscordExtension;
+import pl.indianbartonka.discord.core.command.SlashCommand;
+import pl.indianbartonka.util.DateUtil;
+import pl.indianbartonka.util.MessageUtil;
 
 public class TOPCommand extends ListenerAdapter implements SlashCommand {
 

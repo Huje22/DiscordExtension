@@ -2,12 +2,12 @@ package pl.indianbartonka.discord.jda.listener;
 
 import java.util.Map;
 import java.util.regex.Pattern;
-import pl.indianbartonka.discord.core.listener.JDAListener;
-import pl.indianbartonka.discord.jda.DiscordJDA;
 import net.dv8tion.jda.api.events.guild.member.update.GuildMemberUpdateNicknameEvent;
 import net.dv8tion.jda.api.events.role.update.RoleUpdateNameEvent;
 import net.dv8tion.jda.api.events.user.update.UserUpdateNameEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import pl.indianbartonka.discord.core.listener.JDAListener;
+import pl.indianbartonka.discord.jda.DiscordJDA;
 
 public class MentionPatternCacheListener extends ListenerAdapter implements JDAListener {
 

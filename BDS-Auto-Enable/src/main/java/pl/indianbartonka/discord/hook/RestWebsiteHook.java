@@ -1,8 +1,8 @@
 package pl.indianbartonka.discord.hook;
 
-import pl.indianbartonka.rest.RestWebsite;
 import pl.indianbartonka.discord.DiscordExtension;
 import pl.indianbartonka.discord.rest.DiscordMessagePostRequest;
+import pl.indianbartonka.rest.RestWebsite;
 
 public class RestWebsiteHook {
 

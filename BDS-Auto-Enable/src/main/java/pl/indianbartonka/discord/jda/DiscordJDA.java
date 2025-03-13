@@ -10,6 +10,24 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
+import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.JDABuilder;
+import net.dv8tion.jda.api.OnlineStatus;
+import net.dv8tion.jda.api.Permission;
+import net.dv8tion.jda.api.entities.Activity;
+import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.Member;
+import net.dv8tion.jda.api.entities.MessageEmbed;
+import net.dv8tion.jda.api.entities.Role;
+import net.dv8tion.jda.api.entities.User;
+import net.dv8tion.jda.api.entities.channel.concrete.Category;
+import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
+import net.dv8tion.jda.api.entities.channel.concrete.VoiceChannel;
+import net.dv8tion.jda.api.entities.channel.unions.DefaultGuildChannelUnion;
+import net.dv8tion.jda.api.requests.GatewayIntent;
+import net.dv8tion.jda.api.utils.cache.CacheFlag;
+import org.jetbrains.annotations.Nullable;
 import pl.indianbartonka.bds.BDSAutoEnable;
 import pl.indianbartonka.bds.config.AppConfigManager;
 import pl.indianbartonka.bds.util.HTTPUtil;
@@ -34,26 +52,8 @@ import pl.indianbartonka.discord.jda.manager.StatsChannelsManager;
 import pl.indianbartonka.discord.jda.voice.ProximityVoiceChat;
 import pl.indianbartonka.util.DateUtil;
 import pl.indianbartonka.util.MessageUtil;
-import pl.indianbartonka.util.logger.ConsoleColors;
+import pl.indianbartonka.util.color.AnsiColor;
 import pl.indianbartonka.util.logger.Logger;
-import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.JDA;
-import net.dv8tion.jda.api.JDABuilder;
-import net.dv8tion.jda.api.OnlineStatus;
-import net.dv8tion.jda.api.Permission;
-import net.dv8tion.jda.api.entities.Activity;
-import net.dv8tion.jda.api.entities.Guild;
-import net.dv8tion.jda.api.entities.Member;
-import net.dv8tion.jda.api.entities.MessageEmbed;
-import net.dv8tion.jda.api.entities.Role;
-import net.dv8tion.jda.api.entities.User;
-import net.dv8tion.jda.api.entities.channel.concrete.Category;
-import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
-import net.dv8tion.jda.api.entities.channel.concrete.VoiceChannel;
-import net.dv8tion.jda.api.entities.channel.unions.DefaultGuildChannelUnion;
-import net.dv8tion.jda.api.requests.GatewayIntent;
-import net.dv8tion.jda.api.utils.cache.CacheFlag;
-import org.jetbrains.annotations.Nullable;
 
 public class DiscordJDA implements IDiscordJDA {
 
@@ -298,7 +298,7 @@ public class DiscordJDA implements IDiscordJDA {
         final int green = (col == null ? -1 : col.getGreen());
         final int blue = (col == null ? -1 : col.getBlue());
 
-        return ConsoleColors.getMinecraftColorFromRGB(red, green, blue);
+        return AnsiColor.getMinecraftColor(red, green, blue);
     }
 
     @Override

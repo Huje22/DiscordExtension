@@ -1,13 +1,13 @@
 package pl.indianbartonka.discord.command;
 
-import pl.indianbartonka.bds.command.Command;
-import pl.indianbartonka.util.MessageUtil;
-import pl.indianbartonka.discord.DiscordExtension;
-import pl.indianbartonka.discord.jda.DiscordJDA;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
+import pl.indianbartonka.bds.command.Command;
+import pl.indianbartonka.discord.DiscordExtension;
+import pl.indianbartonka.discord.jda.DiscordJDA;
+import pl.indianbartonka.util.MessageUtil;
 
 public class DiscordCommand extends Command {
 

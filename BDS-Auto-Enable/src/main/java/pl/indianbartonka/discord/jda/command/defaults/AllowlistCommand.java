@@ -3,13 +3,6 @@ package pl.indianbartonka.discord.jda.command.defaults;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
-import pl.indianbartonka.bds.BDSAutoEnable;
-import pl.indianbartonka.bds.server.ServerProcess;
-import pl.indianbartonka.bds.server.allowlist.AllowlistManager;
-import pl.indianbartonka.bds.server.allowlist.component.AllowlistPlayer;
-import pl.indianbartonka.util.MessageUtil;
-import pl.indianbartonka.discord.DiscordExtension;
-import pl.indianbartonka.discord.core.command.SlashCommand;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Member;
@@ -18,6 +11,13 @@ import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
+import pl.indianbartonka.bds.BDSAutoEnable;
+import pl.indianbartonka.bds.server.ServerProcess;
+import pl.indianbartonka.bds.server.allowlist.AllowlistManager;
+import pl.indianbartonka.bds.server.allowlist.component.AllowlistPlayer;
+import pl.indianbartonka.discord.DiscordExtension;
+import pl.indianbartonka.discord.core.command.SlashCommand;
+import pl.indianbartonka.util.MessageUtil;
 
 public class AllowlistCommand implements SlashCommand {
 

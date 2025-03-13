@@ -1,11 +1,6 @@
 package pl.indianbartonka.discord.jda.command.defaults;
 
 import java.awt.Color;
-import pl.indianbartonka.bds.server.ServerProcess;
-import pl.indianbartonka.discord.DiscordExtension;
-import pl.indianbartonka.discord.core.command.SlashCommand;
-import pl.indianbartonka.discord.core.embed.component.Footer;
-import pl.indianbartonka.discord.jda.DiscordJDA;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Member;
@@ -14,6 +9,11 @@ import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEve
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
+import pl.indianbartonka.bds.server.ServerProcess;
+import pl.indianbartonka.discord.DiscordExtension;
+import pl.indianbartonka.discord.core.command.SlashCommand;
+import pl.indianbartonka.discord.core.embed.component.Footer;
+import pl.indianbartonka.discord.jda.DiscordJDA;
 
 public class CmdCommand implements SlashCommand {
 

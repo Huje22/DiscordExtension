@@ -6,10 +6,10 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+import net.dv8tion.jda.api.entities.Member;
 import pl.indianbartonka.bds.player.position.Position;
 import pl.indianbartonka.discord.jda.voice.component.Group;
 import pl.indianbartonka.discord.jda.voice.component.VoiceChatMember;
-import net.dv8tion.jda.api.entities.Member;
 
 public class PlayerGroupManager {
 

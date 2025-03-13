@@ -1,11 +1,6 @@
 package pl.indianbartonka.discord.jda.command.defaults;
 
 import java.awt.Color;
-import pl.indianbartonka.bds.BDSAutoEnable;
-import pl.indianbartonka.util.ThreadUtil;
-import pl.indianbartonka.bds.version.VersionManager;
-import pl.indianbartonka.discord.DiscordExtension;
-import pl.indianbartonka.discord.core.command.SlashCommand;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Member;
@@ -17,6 +12,11 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
+import pl.indianbartonka.bds.BDSAutoEnable;
+import pl.indianbartonka.bds.version.VersionManager;
+import pl.indianbartonka.discord.DiscordExtension;
+import pl.indianbartonka.discord.core.command.SlashCommand;
+import pl.indianbartonka.util.ThreadUtil;
 
 public class VersionCommand extends ListenerAdapter implements SlashCommand {
 

@@ -3,15 +3,6 @@ package pl.indianbartonka.discord.jda.command.defaults;
 import java.awt.Color;
 import java.util.LinkedList;
 import java.util.List;
-import pl.indianbartonka.bds.server.ServerProcess;
-import pl.indianbartonka.util.MessageUtil;
-import pl.indianbartonka.bds.util.ServerUtil;
-import pl.indianbartonka.bds.util.StatusUtil;
-import pl.indianbartonka.util.ThreadUtil;
-import pl.indianbartonka.discord.DiscordExtension;
-import pl.indianbartonka.discord.core.command.SlashCommand;
-import pl.indianbartonka.discord.core.embed.component.Footer;
-import pl.indianbartonka.discord.jda.DiscordJDA;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Member;
@@ -24,6 +15,15 @@ import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import net.dv8tion.jda.api.interactions.components.ActionRow;
 import net.dv8tion.jda.api.interactions.components.buttons.Button;
+import pl.indianbartonka.bds.server.ServerProcess;
+import pl.indianbartonka.bds.util.ServerUtil;
+import pl.indianbartonka.bds.util.StatusUtil;
+import pl.indianbartonka.discord.DiscordExtension;
+import pl.indianbartonka.discord.core.command.SlashCommand;
+import pl.indianbartonka.discord.core.embed.component.Footer;
+import pl.indianbartonka.discord.jda.DiscordJDA;
+import pl.indianbartonka.util.MessageUtil;
+import pl.indianbartonka.util.ThreadUtil;
 
 public class StatsCommand extends ListenerAdapter implements SlashCommand {
 

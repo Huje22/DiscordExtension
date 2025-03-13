@@ -5,16 +5,16 @@ import io.javalin.Javalin;
 import io.javalin.http.ContentType;
 import io.javalin.http.HttpStatus;
 import java.net.HttpURLConnection;
-import pl.indianbartonka.rest.HttpHandler;
-import pl.indianbartonka.rest.RestWebsite;
-import pl.indianbartonka.rest.component.Info;
-import pl.indianbartonka.rest.util.APIKeyUtil;
 import pl.indianbartonka.bds.util.GsonUtil;
 import pl.indianbartonka.discord.DiscordExtension;
 import pl.indianbartonka.discord.core.config.sub.RestAPIConfig;
 import pl.indianbartonka.discord.jda.DiscordJDA;
 import pl.indianbartonka.discord.rest.component.DiscordMessagePostData;
 import pl.indianbartonka.discord.webhook.WebHook;
+import pl.indianbartonka.rest.HttpHandler;
+import pl.indianbartonka.rest.RestWebsite;
+import pl.indianbartonka.rest.component.Info;
+import pl.indianbartonka.rest.util.APIKeyUtil;
 import pl.indianbartonka.util.logger.Logger;
 
 

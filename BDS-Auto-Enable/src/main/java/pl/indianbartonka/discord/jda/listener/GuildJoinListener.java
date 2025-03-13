@@ -1,9 +1,9 @@
 package pl.indianbartonka.discord.jda.listener;
 
-import pl.indianbartonka.discord.jda.DiscordJDA;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.events.guild.GuildJoinEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import pl.indianbartonka.discord.jda.DiscordJDA;
 
 public class GuildJoinListener extends ListenerAdapter {
 

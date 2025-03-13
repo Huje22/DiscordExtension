@@ -3,8 +3,6 @@ package pl.indianbartonka.discord.core;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import pl.indianbartonka.discord.core.embed.component.Field;
-import pl.indianbartonka.discord.core.embed.component.Footer;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.entities.Guild;
@@ -18,6 +16,8 @@ import net.dv8tion.jda.api.entities.channel.concrete.VoiceChannel;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
 import org.jetbrains.annotations.Nullable;
+import pl.indianbartonka.discord.core.embed.component.Field;
+import pl.indianbartonka.discord.core.embed.component.Footer;
 
 public interface IDiscordJDA {
 

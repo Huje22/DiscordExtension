@@ -11,13 +11,13 @@ import pl.indianbartonka.bds.event.server.ServerStartEvent;
 import pl.indianbartonka.bds.event.server.ServerUncaughtExceptionEvent;
 import pl.indianbartonka.bds.event.server.ServerUpdatingEvent;
 import pl.indianbartonka.bds.event.server.TPSChangeEvent;
-import pl.indianbartonka.util.logger.LogState;
-import pl.indianbartonka.util.MessageUtil;
 import pl.indianbartonka.discord.DiscordExtension;
 import pl.indianbartonka.discord.core.embed.component.Field;
 import pl.indianbartonka.discord.core.embed.component.Footer;
 import pl.indianbartonka.discord.core.manager.IStatsChannelsManager;
 import pl.indianbartonka.discord.jda.DiscordJDA;
+import pl.indianbartonka.util.MessageUtil;
+import pl.indianbartonka.util.logger.LogState;
 
 public class ServerListener implements Listener {
 

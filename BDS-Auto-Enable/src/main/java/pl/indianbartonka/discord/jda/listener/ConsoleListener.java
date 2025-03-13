@@ -1,13 +1,6 @@
 package pl.indianbartonka.discord.jda.listener;
 
 import java.util.concurrent.TimeUnit;
-import pl.indianbartonka.bds.BDSAutoEnable;
-import pl.indianbartonka.util.logger.Logger;
-import pl.indianbartonka.bds.server.ServerProcess;
-import pl.indianbartonka.util.DateUtil;
-import pl.indianbartonka.discord.DiscordExtension;
-import pl.indianbartonka.discord.core.listener.JDAListener;
-import pl.indianbartonka.discord.jda.DiscordJDA;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Message;
@@ -15,6 +8,13 @@ import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import pl.indianbartonka.bds.BDSAutoEnable;
+import pl.indianbartonka.bds.server.ServerProcess;
+import pl.indianbartonka.discord.DiscordExtension;
+import pl.indianbartonka.discord.core.listener.JDAListener;
+import pl.indianbartonka.discord.jda.DiscordJDA;
+import pl.indianbartonka.util.DateUtil;
+import pl.indianbartonka.util.logger.Logger;
 
 public class ConsoleListener extends ListenerAdapter implements JDAListener {
 

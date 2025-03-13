@@ -1,7 +1,7 @@
 package pl.indianbartonka.discord.jda.voice.component;
 
-import pl.indianbartonka.bds.player.position.Position;
 import net.dv8tion.jda.api.entities.Member;
+import pl.indianbartonka.bds.player.position.Position;
 
 public class VoiceChatMember {
 

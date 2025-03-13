@@ -49,7 +49,7 @@
     <dependency>
       <groupId>eu.okaeri</groupId>
       <artifactId>okaeri-configs-yaml-snakeyaml</artifactId>
-      <version>5.0.2</version>
+      <version>5.0.6</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>

@@ -1,8 +1,6 @@
 package pl.indianbartonka.discord.jda.command.defaults;
 
 import java.awt.Color;
-import pl.indianbartonka.discord.core.command.SlashCommand;
-import pl.indianbartonka.util.BedrockQuery;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
@@ -10,6 +8,8 @@ import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
+import pl.indianbartonka.discord.core.command.SlashCommand;
+import pl.indianbartonka.util.BedrockQuery;
 
 public class ServerCommand implements SlashCommand {
 
@@ -43,7 +43,7 @@ public class ServerCommand implements SlashCommand {
             embedBuilder.addField("Nazwa Mapy", query.mapName(), false);
             embedBuilder.addField("Gracz online", String.valueOf(query.playerCount()), true);
             embedBuilder.addField("Maksymalna ilość graczy", String.valueOf(query.maxPlayers()), true);
-            embedBuilder.addField("Tryb Gry", query.gamemode(), false);
+            embedBuilder.addField("Tryb Gry", query.gameMode(), false);
             embedBuilder.addField("Edycja", query.edition(), true);
 
             if (portV4 != -1) {
