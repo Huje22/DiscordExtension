@@ -12,8 +12,6 @@ import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import pl.indianbartonka.bds.BDSAutoEnable;
-import pl.indianbartonka.bds.player.InputMode;
-import pl.indianbartonka.bds.player.PlatformType;
 import pl.indianbartonka.bds.player.PlayerStatistics;
 import pl.indianbartonka.bds.server.stats.StatsManager;
 import pl.indianbartonka.bds.util.geyser.GeyserUtil;
@@ -71,11 +69,20 @@ public class PlayerInfoCommand implements SlashCommand {
                     embedBuilder.addField("Nick", playerName, true);
                     embedBuilder.addField("XUID", String.valueOf(xuid), true);
 
-                    final PlatformType deviceOS = player.getPlatformType();
-                    final InputMode inputMode = player.getLastKnownInputMode() ;
+                    embedBuilder.addField("Urządzenie", player.getPlatformType().getPlatformName(), true);
+                    embedBuilder.addField("Kontroler", player.getLastKnownInputMode().getMode(), true);
+                    embedBuilder.addField("Maksymalna Liczba Chunk", String.valueOf(player.getMaxRenderDistance()), true);
 
-                    embedBuilder.addField("Urządzenie", deviceOS.toString(), true);
-                    embedBuilder.addField("Kontroler", inputMode.toString(), true);
+                    final String memory = switch (player.getMemoryTier().getTier()) {
+                        case 0 -> "Max 1,5GB";
+                        case 1 -> "Max 2GB";
+                        case 2 -> "Max 4GB";
+                        case 3 -> "Max 8GB";
+                        case 4 -> "Więcej niż 8GB";
+                        default -> "Niewiadomo";
+                    };
+
+                    embedBuilder.addField("Poziom Pamięci", memory, true);
 
                     final List<String> oldNames = player.getOldNames();
                     if (oldNames != null && !oldNames.isEmpty()) {
