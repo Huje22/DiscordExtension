@@ -130,7 +130,7 @@ public class LinkingCommand implements SlashCommand {
             final long hours = DateUtil.hoursFrom(this.bdsAutoEnable.getServerManager().getStatsManager()
                     .getPlayTime(playerName), TimeUnit.MILLISECONDS);
 
-            linked.add(place + ". **" + playerName + "**: " + entry.getValue() + " " + (hours < 5 ? "❌" : "✅"));
+            linked.add(place + ". **" + playerName + "**: " + entry.getValue() + " " + (hours < 5 ? "❌" : "✅") + "/n" POPRAW TO XD);
             place++;
         }
 
