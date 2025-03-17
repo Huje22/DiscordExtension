@@ -135,19 +135,15 @@ public class PlayerEventListener implements Listener {
 
                 if (cachedPrefix != null) {
                     if (!cachedPrefix.equals(prefix)) {
-                        this.sendPrefixChange(playerName, prefix);
+                        ServerUtil.setPlayerPrefix(playerName, prefix);
                         this.cachedPrefixes.put(playerName, prefix);
                     }
                 } else {
-                    this.sendPrefixChange(playerName, prefix);
+                    ServerUtil.setPlayerPrefix(playerName, prefix);
                     this.cachedPrefixes.put(playerName, prefix);
                 }
             }
         }
-    }
-
-    private void sendPrefixChange(final String playerName, final String prefix) {
-        this.serverProcess.sendToConsole("scriptevent bds:tag_prefix " + playerName.replaceAll("\"", "") + "=" + MinecraftUtil.colorize(prefix) + " ");
     }
 
     private String getRole(final Member member, final boolean customRole) {
