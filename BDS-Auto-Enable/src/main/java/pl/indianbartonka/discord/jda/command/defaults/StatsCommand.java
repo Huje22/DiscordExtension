@@ -99,8 +99,7 @@ public class StatsCommand extends ListenerAdapter implements SlashCommand {
 
         return new EmbedBuilder()
                 .setTitle("Statystyki ")
-            ZROB TO ABY BYŁO Z /N i wszystko inne co używa listToS...
-                .setDescription(MessageUtil.listToSpacedString(StatusUtil.getMainStats(true)))
+                .setDescription(MessageUtil.listToNewLineString(StatusUtil.getMainStats(true)))
                 .setColor(Color.BLUE)
                 .build();
     }

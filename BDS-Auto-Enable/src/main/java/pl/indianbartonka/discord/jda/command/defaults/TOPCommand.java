@@ -72,7 +72,7 @@ public class TOPCommand extends ListenerAdapter implements SlashCommand {
 
         return new EmbedBuilder()
                 .setTitle("Top 50 graczy z największą ilością przegranego czasu")
-                .setDescription((playTime.isEmpty() ? "**Brak Danych**" : MessageUtil.listToSpacedString(playTime)))
+                .setDescription((playTime.isEmpty() ? "**Brak Danych**" : MessageUtil.listToNewLineString(playTime)))
                 .setColor(Color.BLUE)
                 .setFooter(totalUpTime)
                 .build();
@@ -82,7 +82,7 @@ public class TOPCommand extends ListenerAdapter implements SlashCommand {
         final List<String> deaths = PlayerStatsUtil.getTopDeaths(true, 50);
         return new EmbedBuilder()
                 .setTitle("Top 50 graczy z największą ilością śmierci")
-                .setDescription((deaths.isEmpty() ? "**Brak Danych**" : MessageUtil.listToSpacedString(deaths)))
+                .setDescription((deaths.isEmpty() ? "**Brak Danych**" : MessageUtil.listToNewLineString(deaths)))
                 .setColor(Color.BLUE)
                 .build();
     }

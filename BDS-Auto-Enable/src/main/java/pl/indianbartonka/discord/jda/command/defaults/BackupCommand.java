@@ -165,7 +165,7 @@ public class BackupCommand extends ListenerAdapter implements SlashCommand {
                 .setTitle("Backup info")
                 .setDescription("Status ostatniego backup: " + backupStatus +
                         "Następny backup za: `" + DateUtil.formatTimeDynamic(this.backupModule.calculateMillisUntilNextBackup()) + "`\n" +
-                        (description.isEmpty() ? "**Brak dostępnych backup**" : "**Dostępne backupy**:\n" + MessageUtil.listToSpacedString(description) + "\n") +
+                        (description.isEmpty() ? "**Brak dostępnych backup**" : "**Dostępne backupy**:\n" + MessageUtil.listToNewLineString(description) + "\n") +
                         (gbSpace < 2 ? "**Zbyt mało pamięci aby wykonać backup!**" : ""))
                 .setColor(Color.BLUE)
                 .build();

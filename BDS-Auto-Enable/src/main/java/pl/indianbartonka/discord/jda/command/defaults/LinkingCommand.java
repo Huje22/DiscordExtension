@@ -87,7 +87,7 @@ public class LinkingCommand implements SlashCommand {
             }
         } else {
             final List<String> linkedAccounts = this.getLinkedAccounts();
-            String linkedAccsString = "Już **" + linkedAccounts.size() + "** osób połączyło konta\n" + MessageUtil.listToSpacedString(linkedAccounts);
+            String linkedAccsString = "Już **" + linkedAccounts.size() + "** osób połączyło konta\n" + MessageUtil.listToNewLineString(linkedAccounts);
 
             if (linkedAccsString.isEmpty()) {
                 linkedAccsString = "**Brak połączonych kont**";
@@ -103,7 +103,6 @@ public class LinkingCommand implements SlashCommand {
             event.getHook().editOriginalEmbeds(messageEmbed).queue();
         }
     }
-
 
     private String hasEnoughHours(final Member member) {
         String hoursMessage = "";
@@ -130,7 +129,7 @@ public class LinkingCommand implements SlashCommand {
             final long hours = DateUtil.hoursFrom(this.bdsAutoEnable.getServerManager().getStatsManager()
                     .getPlayTime(playerName), TimeUnit.MILLISECONDS);
 
-            linked.add(place + ". **" + playerName + "**: " + entry.getValue() + " " + (hours < 5 ? "❌" : "✅") + "/n" POPRAW TO XD);
+            linked.add(place + ". **" + playerName + "**: " + entry.getValue() + " " + (hours < 5 ? "❌" : "✅"));
             place++;
         }
 
