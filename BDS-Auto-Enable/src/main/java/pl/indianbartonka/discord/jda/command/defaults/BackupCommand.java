@@ -26,6 +26,7 @@ import pl.indianbartonka.discord.core.command.SlashCommand;
 import pl.indianbartonka.discord.jda.DiscordJDA;
 import pl.indianbartonka.util.DateUtil;
 import pl.indianbartonka.util.FileUtil;
+import pl.indianbartonka.util.MathUtil;
 import pl.indianbartonka.util.MemoryUnit;
 import pl.indianbartonka.util.MessageUtil;
 import pl.indianbartonka.util.ThreadUtil;
@@ -158,7 +159,7 @@ public class BackupCommand extends ListenerAdapter implements SlashCommand {
                         .withEmoji(Emoji.fromUnicode("🗑️")));
             }
 
-            description.add("Nazwa: `" + fileName + "` Rozmiar: `" + FileUtil.getFileSize(path.toFile()) + "`");
+            description.add("Nazwa: `" + fileName + "` Rozmiar: `" + MathUtil.formatBytesDynamic(FileUtil.getFileSize(path.toFile()), true) + "`");
         }
 
         return new EmbedBuilder()
