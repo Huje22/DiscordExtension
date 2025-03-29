@@ -45,6 +45,7 @@ public class ServerCommand implements SlashCommand {
             embedBuilder.addField("Maksymalna ilość graczy", String.valueOf(query.maxPlayers()), true);
             embedBuilder.addField("Tryb Gry", query.gameMode(), false);
             embedBuilder.addField("Edycja", query.edition(), true);
+            //TODO: Dodać info ogranicznie nintendo
 
             if (portV4 != -1) {
                 embedBuilder.addField("Port v4", String.valueOf(portV4), true);
