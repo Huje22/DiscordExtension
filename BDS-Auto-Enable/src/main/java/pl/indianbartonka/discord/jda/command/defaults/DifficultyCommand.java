@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.Permission;
+import net.dv8tion.jda.api.components.actionrow.ActionRow;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.entities.emoji.Emoji;
@@ -13,8 +14,7 @@ import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
-import net.dv8tion.jda.api.interactions.components.ActionRow;
-import net.dv8tion.jda.api.interactions.components.buttons.Button;
+import net.dv8tion.jda.api.components.buttons.Button;
 import pl.indianbartonka.bds.BDSAutoEnable;
 import pl.indianbartonka.bds.server.ServerProcess;
 import pl.indianbartonka.bds.server.properties.component.Difficulty;
@@ -40,7 +40,7 @@ public class DifficultyCommand extends ListenerAdapter implements SlashCommand {
 
         if (member.hasPermission(Permission.ADMINISTRATOR)) {
             event.getHook().editOriginalEmbeds(this.getDifficultyEmbed())
-                    .setActionRow(ActionRow.of(this.difficultyButtons).getComponents())
+                    .setComponents(ActionRow.of(this.difficultyButtons))
                     .queue();
         } else {
             event.getHook().editOriginalEmbeds(this.getDifficultyEmbed()).queue();
@@ -54,28 +54,28 @@ public class DifficultyCommand extends ListenerAdapter implements SlashCommand {
                 this.serverProcess.sendToConsole("difficulty " + Difficulty.PEACEFUL.getDifficultyName());
                 this.bdsAutoEnable.getServerProperties().setDifficulty(Difficulty.PEACEFUL);
                 event.getHook().editOriginalEmbeds(this.getDifficultyEmbed())
-                        .setActionRow(ActionRow.of(this.difficultyButtons).getComponents())
+                        .setComponents(ActionRow.of(this.difficultyButtons))
                         .queue();
             }
             case "easy" -> {
                 this.serverProcess.sendToConsole("difficulty " + Difficulty.EASY.getDifficultyName());
                 this.bdsAutoEnable.getServerProperties().setDifficulty(Difficulty.EASY);
                 event.getHook().editOriginalEmbeds(this.getDifficultyEmbed())
-                        .setActionRow(ActionRow.of(this.difficultyButtons).getComponents())
+                        .setComponents(ActionRow.of(this.difficultyButtons))
                         .queue();
             }
             case "normal" -> {
                 this.serverProcess.sendToConsole("difficulty " + Difficulty.NORMAL.getDifficultyName());
                 this.bdsAutoEnable.getServerProperties().setDifficulty(Difficulty.NORMAL);
                 event.getHook().editOriginalEmbeds(this.getDifficultyEmbed())
-                        .setActionRow(ActionRow.of(this.difficultyButtons).getComponents())
+                        .setComponents(ActionRow.of(this.difficultyButtons))
                         .queue();
             }
             case "hard" -> {
                 this.serverProcess.sendToConsole("difficulty " + Difficulty.HARD.getDifficultyName());
                 this.bdsAutoEnable.getServerProperties().setDifficulty(Difficulty.HARD);
                 event.getHook().editOriginalEmbeds(this.getDifficultyEmbed())
-                        .setActionRow(ActionRow.of(this.difficultyButtons).getComponents())
+                        .setComponents(ActionRow.of(this.difficultyButtons))
                         .queue();
             }
         }

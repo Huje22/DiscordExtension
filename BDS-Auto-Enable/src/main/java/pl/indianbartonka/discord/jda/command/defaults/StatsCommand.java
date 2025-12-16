@@ -5,6 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.Permission;
+import net.dv8tion.jda.api.components.actionrow.ActionRow;
+import net.dv8tion.jda.api.components.buttons.Button;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.entities.emoji.Emoji;
@@ -13,8 +15,6 @@ import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
-import net.dv8tion.jda.api.interactions.components.ActionRow;
-import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import pl.indianbartonka.bds.server.ServerProcess;
 import pl.indianbartonka.bds.util.ServerUtil;
 import pl.indianbartonka.bds.util.StatusUtil;
@@ -45,7 +45,7 @@ public class StatsCommand extends ListenerAdapter implements SlashCommand {
 
         if (member.hasPermission(Permission.MANAGE_SERVER)) {
             event.getHook().editOriginalEmbeds(this.getStatsEmbed())
-                    .setActionRow(ActionRow.of(this.statsButtons).getComponents())
+                    .setComponents(ActionRow.of(this.statsButtons))
                     .queue();
         } else {
             event.getHook().editOriginalEmbeds(this.getStatsEmbed()).queue();
@@ -79,7 +79,7 @@ public class StatsCommand extends ListenerAdapter implements SlashCommand {
         }
         ThreadUtil.sleep(3);
         event.getHook().editOriginalEmbeds(this.getStatsEmbed())
-                .setActionRow(ActionRow.of(this.statsButtons).getComponents())
+                .setComponents(ActionRow.of(this.statsButtons))
                 .queue();
     }
 

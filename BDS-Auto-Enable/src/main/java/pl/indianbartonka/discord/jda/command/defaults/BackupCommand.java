@@ -7,6 +7,8 @@ import java.util.LinkedList;
 import java.util.List;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.Permission;
+import net.dv8tion.jda.api.components.actionrow.ActionRow;
+import net.dv8tion.jda.api.components.buttons.Button;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.entities.emoji.Emoji;
@@ -15,8 +17,6 @@ import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
-import net.dv8tion.jda.api.interactions.components.ActionRow;
-import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import pl.indianbartonka.bds.BDSAutoEnable;
 import pl.indianbartonka.bds.server.ServerProcess;
 import pl.indianbartonka.bds.util.ServerUtil;
@@ -62,7 +62,7 @@ public class BackupCommand extends ListenerAdapter implements SlashCommand {
         }
         if (member.hasPermission(Permission.ADMINISTRATOR)) {
             event.getHook().editOriginalEmbeds(this.getBackupEmbed())
-                    .setActionRow(ActionRow.of(this.backupButtons).getComponents())
+                    .setComponents(ActionRow.of(this.backupButtons))
                     .queue();
         } else {
             event.getHook().editOriginalEmbeds(this.getBackupEmbed()).queue();
@@ -105,7 +105,7 @@ public class BackupCommand extends ListenerAdapter implements SlashCommand {
             this.backupModule.backup();
             ThreadUtil.sleep((int) this.bdsAutoEnable.getAppConfigManager().getWatchDogConfig().getBackupConfig().getLastBackupTime() + 3);
             event.getHook().editOriginalEmbeds(this.getBackupEmbed())
-                    .setActionRow(this.backupButtons).queue();
+                    .setComponents(ActionRow.of(this.backupButtons)).queue();
         }).start();
 
         return true;
@@ -124,7 +124,7 @@ public class BackupCommand extends ListenerAdapter implements SlashCommand {
                     }
                     this.backupModule.getBackups().remove(path);
                     event.getHook().editOriginalEmbeds(this.getBackupEmbed())
-                            .setActionRow(ActionRow.of(this.backupButtons).getComponents())
+                            .setComponents(ActionRow.of(this.backupButtons))
                             .queue();
                     ServerUtil.tellrawToAllAndLogger("&7[&bDiscord&7]",
                             "&aUżytkownik&b " + this.discordJDA.getUserName(event.getMember(), event.getUser()) +

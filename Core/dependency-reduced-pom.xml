@@ -45,14 +45,6 @@
       <url>https://storehouse.okaeri.eu/repository/maven-public/</url>
     </repository>
   </repositories>
-  <dependencies>
-    <dependency>
-      <groupId>eu.okaeri</groupId>
-      <artifactId>okaeri-configs-yaml-snakeyaml</artifactId>
-      <version>5.0.6</version>
-      <scope>provided</scope>
-    </dependency>
-  </dependencies>
   <properties>
     <maven.compiler.target>17</maven.compiler.target>
     <maven.compiler.source>17</maven.compiler.source>

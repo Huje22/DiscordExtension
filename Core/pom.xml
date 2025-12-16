@@ -27,18 +27,19 @@
     </repositories>
 
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/net.dv8tion/JDA -->
+        <!-- https://mvnrepository.com/artifact/net.dv8tion/JDA -->
         <dependency>
             <groupId>net.dv8tion</groupId>
             <artifactId>JDA</artifactId>
-            <version>5.3.0</version>
+            <version>6.2.0</version>
             <scope>compile</scope>
         </dependency>
 
         <dependency>
             <groupId>eu.okaeri</groupId>
             <artifactId>okaeri-configs-yaml-snakeyaml</artifactId>
-            <version>5.0.6</version>
-            <scope>provided</scope>
+            <version>5.0.9</version>
         </dependency>
     </dependencies>
 

@@ -24,7 +24,7 @@ public class BotConfig extends OkaeriConfig {
             GatewayIntent.GUILD_PRESENCES,
             GatewayIntent.GUILD_MEMBERS,
             GatewayIntent.GUILD_MESSAGES,
-            GatewayIntent.GUILD_EMOJIS_AND_STICKERS,
+            GatewayIntent.GUILD_EXPRESSIONS,
             GatewayIntent.MESSAGE_CONTENT,
             GatewayIntent.GUILD_VOICE_STATES
     );

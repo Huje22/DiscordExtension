@@ -113,7 +113,7 @@ public class DiscordJDA implements IDiscordJDA {
                         .disableCache(this.botConfig.getDisableCacheFlag())
                         .enableCache(this.botConfig.getEnableCacheFlag())
                         .setEnableShutdownHook(false)
-                        .setHttpClient(HTTPUtil.getOkHttpClient())
+                        .setHttpClient(HTTPUtil.OK_HTTP_CLIENT)
                         .build();
                 this.jda.awaitReady();
             } catch (final Exception exception) {

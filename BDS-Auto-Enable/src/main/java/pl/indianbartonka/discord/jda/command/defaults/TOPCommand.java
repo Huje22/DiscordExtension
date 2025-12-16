@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.components.actionrow.ActionRow;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.entities.emoji.Emoji;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
@@ -13,8 +14,7 @@ import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
-import net.dv8tion.jda.api.interactions.components.ActionRow;
-import net.dv8tion.jda.api.interactions.components.buttons.Button;
+import net.dv8tion.jda.api.components.buttons.Button;
 import pl.indianbartonka.bds.BDSAutoEnable;
 import pl.indianbartonka.bds.server.stats.ServerStats;
 import pl.indianbartonka.bds.server.stats.StatsManager;
@@ -48,11 +48,11 @@ public class TOPCommand extends ListenerAdapter implements SlashCommand {
 
 
         event.getHook().editOriginalEmbeds(embed.build())
-                .setActionRow(ActionRow.of(
+                .setComponents(ActionRow.of(
                                 Button.primary("playtime", "Czas gry").withEmoji(Emoji.fromFormatted("<a:animated_clock:562493945058164739>")),
                                 Button.primary("deaths", "Śmierci").withEmoji(Emoji.fromUnicode("☠️")),
                                 Button.primary("blocks", "Bloki").withEmoji(Emoji.fromFormatted("<:kilof:1064228602759102464>")))
-                        .getComponents())
+                )
                 .queue();
     }
 

@@ -9,7 +9,7 @@ import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import pl.indianbartonka.discord.core.command.SlashCommand;
-import pl.indianbartonka.util.BedrockQuery;
+import pl.indianbartonka.util.minecraft.BedrockQuery;
 
 public class ServerCommand implements SlashCommand {
 
