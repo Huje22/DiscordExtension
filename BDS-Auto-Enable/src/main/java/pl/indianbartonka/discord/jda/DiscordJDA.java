@@ -262,6 +262,7 @@ public class DiscordJDA implements IDiscordJDA {
         }
     }
 
+    //TODO: Dodaj Cachowanie roli
     @Override
     @Nullable
     public Role getHighestRole(final long memberID) {
