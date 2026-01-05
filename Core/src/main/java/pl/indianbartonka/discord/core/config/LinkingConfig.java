@@ -18,6 +18,7 @@ public class LinkingConfig extends OkaeriConfig {
 
     @Comment({""})
     @Comment({"ID roli którą bedzie otrzymywał użytkownik po połączeniu kont jeśli ma sie 5h czasu gry na serwerze"})
+    DODAJ RANGE ZA 24H NIE 5
     private long linkedPlaytimeRoleID = 1L;
 
     @Comment({""})
