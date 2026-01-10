@@ -109,10 +109,11 @@ public class LinkingCommand implements SlashCommand {
         final long roleID = this.discordExtension.getLinkingConfig().getLinkedPlaytimeRoleID();
         final long hours = DateUtil.hoursFrom(this.bdsAutoEnable.getServerManager().getStatsManager()
                 .getPlayTime(this.linkingManager.getNameByID(member.getIdLong())), TimeUnit.MILLISECONDS);
-        if (hours < 5) {
+
+        if (hours < 24) {
             if (this.discordJDA.getJda().getRoleById(roleID) != null) {
                 hoursMessage = "\nMasz za mało godzin gry aby otrzymać <@&" + roleID + "> (**" + hours + "** godzin gry)" +
-                        "\nDostaniesz role gdy wbijesz **5** godzin gry";
+                        "\nDostaniesz role gdy wbijesz **1** dzień gry";
             }
         }
 

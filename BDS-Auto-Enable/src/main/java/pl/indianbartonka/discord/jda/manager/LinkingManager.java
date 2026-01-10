@@ -236,7 +236,7 @@ public class LinkingManager implements ILinkingManager {
             final Role playtimeRole = guild.getRoleById(this.linkingConfig.getLinkedPlaytimeRoleID());
             final Role linkingRole = guild.getRoleById(this.linkingConfig.getLinkedRoleID());
 
-            if (hours >= 5 && playtimeRole != null && !member.getRoles().contains(playtimeRole) && guild.getSelfMember().canInteract(playtimeRole)) {
+            if (hours >= 24 && playtimeRole != null && !member.getRoles().contains(playtimeRole) && guild.getSelfMember().canInteract(playtimeRole)) {
                 guild.addRoleToMember(member, playtimeRole).queue();
             }
 
