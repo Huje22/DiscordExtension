@@ -79,8 +79,15 @@ public class PlayerEventListener implements Listener {
             final Member member = this.linkingManager.getMember(playerName);
             if (member != null) {
                 memberMutedOnDiscord = member.isTimedOut();
-                role = this.getRole(member, this.linkingConfig.isUseCustomRolesInChat());
-                this.setPlayerPrefix(playerName);
+
+                final String cachedRole = this.cachedPrefixes.get(playerName);
+
+                if (cachedRole == null) {
+                    this.setPlayerPrefix(playerName);
+                    role = this.cachedPrefixes.get(playerName);
+                } else {
+                    role = cachedRole;
+                }
             }
         }
 
